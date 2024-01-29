@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: lightgreen;
+}
+
+.outerContainer{
+    position: relative;
+    top: 50px;
+}
+h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+#caution{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    width: 58%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    color: lightcoral;
+    border-radius: 5px;
+}
+span{
+    color: red;
+    font-weight: 700;
+}
+.container{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding:20px 10px 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#selectType{
+    color: lightgreen;
+    background-color: rgb(45, 45, 45);
+    border: 5px solid rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 4px 5px 3px 5px;
+    font-weight: 900;
+    border-radius: 2px;
+}
+
+option{
+    font-weight: 900;
+}
+button{
+    font-size: 20px;
+    color: black;
+    background-color: lightgreen;
+    padding: 1px 10px 1px 10px;
+    border-radius: 2px;
+    border: 5px solid black;
+    font-weight: 900;
+    animation-name: bordercolor;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes bordercolor{
+    0% {border: 5px solid black; color:black;background-color: lightgreen;}
+    50% { color:lightgreen; background-color: black;}
+    100% {border: 5px solid black; color:black;background-color: lightgreen;}
+
+}
+button:hover{
+    cursor: pointer;
+}
+.textContainer{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    color: lightgreen;
+}
+.setup{
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(30, 30, 30);
+    border-radius: 5px;
+}
+.punchline{
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgb(30, 30, 30);
+}
