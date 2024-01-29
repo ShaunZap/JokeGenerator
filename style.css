@@ -7,10 +7,6 @@ body{
     background-color: lightgreen;
 }
 
-.outerContainer{
-    position: relative;
-    top: 50px;
-}
 h1{
     font-family: 'Raleway', sans-serif;
     font-size: 60px;
@@ -25,7 +21,7 @@ h1{
     width: 58%;
     margin: 0 auto;
     padding: 10px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.808);
     color: lightcoral;
     border-radius: 5px;
 }
@@ -89,7 +85,7 @@ button:hover{
     padding: 20px;
     width: 100%;
     margin: 0 auto;
-    background-color: rgb(30, 30, 30);
+    background-color: rgba(30, 30, 30, 0.906);
     border-radius: 5px;
 }
 .punchline{
@@ -99,4 +95,18 @@ button:hover{
     margin-top: 10px;
     border-radius: 5px;
     background-color: rgb(30, 30, 30);
+}
+
+
+@media screen and (max-width: 750px) {
+    h1{
+        font-size: 40px;
+    }
+    #caution{
+        width: 95%;
+    }
+    .container, .textContainer{
+        width: 97%;
+    }
+
 }
