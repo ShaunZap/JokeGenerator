@@ -43,7 +43,7 @@ async function getJokes() {
                 setupTextColor:"orange", setupBorderColor:"orange", punchlineBackgroundColor:"#301934",
                 punchlineTextColor:"orange", punchlineBorderColor:"orange"},
 
-    "Pun": { backgroundColor:"#301934", titleTextColor:"red", cautionBackgroundColor:"orangered",
+    "Pun": { backgroundColor:"orange", titleTextColor:"red", cautionBackgroundColor:"orangered",
                 cautionTextColor:"white", cautionBorderColor:"black", optionsBackgroundColor:"orangered",
                 optionsTextColor:"white", optionsBorderColor:"black", buttonBackgroundColor:"orangered",
                 buttonTextColor:"white", buttonBorderColor:"black", setupBackgroundColor:"orangered",
