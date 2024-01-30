@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     getJokes();
 });
 
+
+
 async function getJokes() {
     const currentJokeType = document.getElementById("selectType").value;
     let response, data;
@@ -10,7 +12,56 @@ async function getJokes() {
     // console.log(data);
     document.getElementById("setup").innerHTML = data.setup;
     document.getElementById("punchline").innerHTML = data.delivery;
+    
 
+    const colorThemes = {
+        "Dark": { backgroundColor:"#36454F", titleTextColor:"white", cautionBackgroundColor:"white",
+                cautionTextColor:"#36454F", cautionBorderColor:"black", optionsBackgroundColor:"white",
+                optionsTextColor:"#36454F", optionsBorderColor:"black", buttonBackgroundColor:"white",
+                buttonTextColor:"#36454F", buttonBorderColor:"black", setupBackgroundColor:"white",
+                setupTextColor:"#36454F", setupBorderColor:"black", punchlineBackgroundColor:"white",
+                punchlineTextColor:"#36454F", punchlineBorderColor:"black"},
+
+    "Programming": { backgroundColor:"black", titleTextColor:"lightgreen", cautionBackgroundColor:"#1B1212",
+                cautionTextColor:"lightgreen", cautionBorderColor:"lightgreen", optionsBackgroundColor:"#1B1212",
+                optionsTextColor:"lightgreen", optionsBorderColor:"lightgreen", buttonBackgroundColor:"#1B1212",
+                buttonTextColor:"lightgreen", buttonBorderColor:"lightgreen", setupBackgroundColor:"#1B1212",
+                setupTextColor:"lightgreen", setupBorderColor:"lightgreen", punchlineBackgroundColor:"#1B1212",
+                punchlineTextColor:"lightgreen", punchlineBorderColor:"lightgreen"},
+
+    "Christmas": { backgroundColor:"#E40A2D", titleTextColor:"#13cc4e", cautionBackgroundColor:"#1e7c4e",
+                cautionTextColor:"white", cautionBorderColor:"black", optionsBackgroundColor:"#1e7c4e",
+                optionsTextColor:"white", optionsBorderColor:"black", buttonBackgroundColor:"#1e7c4e",
+                buttonTextColor:"white", buttonBorderColor:"black", setupBackgroundColor:"#1e7c4e",
+                setupTextColor:"white", setupBorderColor:"black", punchlineBackgroundColor:"#1e7c4e",
+                punchlineTextColor:"white", punchlineBorderColor:"black"},
+
+    "Spooky": { backgroundColor:"indigo", titleTextColor:"orange", cautionBackgroundColor:"#301934",
+                cautionTextColor:"orange", cautionBorderColor:"orange", optionsBackgroundColor:"#301934",
+                optionsTextColor:"orange", optionsBorderColor:"orange", buttonBackgroundColor:"#301934",
+                buttonTextColor:"orange", buttonBorderColor:"orange", setupBackgroundColor:"#301934",
+                setupTextColor:"orange", setupBorderColor:"orange", punchlineBackgroundColor:"#301934",
+                punchlineTextColor:"orange", punchlineBorderColor:"orange"},
+
+    "Pun": { backgroundColor:"#301934", titleTextColor:"red", cautionBackgroundColor:"orangered",
+                cautionTextColor:"white", cautionBorderColor:"black", optionsBackgroundColor:"orangered",
+                optionsTextColor:"white", optionsBorderColor:"black", buttonBackgroundColor:"orangered",
+                buttonTextColor:"white", buttonBorderColor:"black", setupBackgroundColor:"orangered",
+                setupTextColor:"white", setupBorderColor:"black", punchlineBackgroundColor:"orangered",
+                punchlineTextColor:"white", punchlineBorderColor:"black"},
+
+    "Miscellaneous": { backgroundColor:"pink", titleTextColor:"#66023c", cautionBackgroundColor:"#ec3b83",
+                cautionTextColor:"white", cautionBorderColor:"black", optionsBackgroundColor:"orange",
+                optionsTextColor:"white", optionsBorderColor:"black", buttonBackgroundColor:"orange",
+                buttonTextColor:"white", buttonBorderColor:"black", setupBackgroundColor:"red",
+                setupTextColor:"white", setupBorderColor:"black", punchlineBackgroundColor:"darkgreen",
+                punchlineTextColor:"white", punchlineBorderColor:"black"},
+    };
+
+    applyTheme(colorThemes[currentJokeType]);
+}
+
+function applyTheme(theme){
 
     let title = document.getElementById("title");
     let caution = document.getElementById("caution");
@@ -18,120 +69,29 @@ async function getJokes() {
     let jokebutton = document.getElementById("jokebutton");
     let setup = document.getElementById("setup");
     let punchline = document.getElementById("punchline");
+    
+    document.body.style.backgroundColor = theme.backgroundColor;
+    title.style.color = theme.titleTextColor;
 
-    //Changes colors based on the category chosen
-    if(currentJokeType == "Dark"){
-        document.body.style.backgroundColor = "#36454F";
-        title.style.color = "white";
-        caution.style.backgroundColor = "white"
-        caution.style.color = "#36454F";
-        caution.style.border = "5px solid black";
-        options.style.color = "#36454F";
-        options.style.backgroundColor = "white";
-        options.style.border = "5px solid black";
-        jokebutton.style.color = "#36454F";
-        jokebutton.style.backgroundColor = "white";
-        jokebutton.style.border = "5px solid black";
-        setup.style.backgroundColor = "white";
-        punchline.style.backgroundColor = "white";
-        setup.style.border = "5px solid black";
-        punchline.style.border = "5px solid black";
-        setup.style.color = "#36454F";
-        punchline.style.color = "#36454F";
-    }
-    else if(currentJokeType == "Christmas"){
-        document.body.style.backgroundColor = "#E40A2D";
-        title.style.color = "#13cc4e";
-        caution.style.backgroundColor = "#1e7c4e"
-        caution.style.color = "white";
-        caution.style.border = "5px solid black";
-        options.style.color = "white";
-        options.style.backgroundColor = "#1e7c4e";
-        options.style.border = "5px solid black";
-        jokebutton.style.color = "white";
-        jokebutton.style.backgroundColor = "#1e7c4e";
-        jokebutton.style.border = "5px solid black";
-        setup.style.backgroundColor = "#1e7c4e";
-        punchline.style.backgroundColor = "#1e7c4e";
-        setup.style.border = "5px solid black";
-        punchline.style.border = "5px solid black";
-        setup.style.color = "white";
-        punchline.style.color = "white";
-    }
-    else if(currentJokeType == "Pun"){
-        document.body.style.backgroundColor = "orange";
-        title.style.color = "red";
-        caution.style.backgroundColor = "orangered"
-        caution.style.color = "white";
-        caution.style.border = "5px solid black";
-        options.style.color = "white";
-        options.style.backgroundColor = "orangered";
-        options.style.border = "5px solid black";
-        jokebutton.style.color = "white";
-        jokebutton.style.backgroundColor = "orangered";
-        jokebutton.style.border = "5px solid black";
-        setup.style.backgroundColor = "orangered";
-        punchline.style.backgroundColor = "orangered";
-        setup.style.border = "5px solid black";
-        punchline.style.border = "5px solid black";
-        setup.style.color = "white";
-        punchline.style.color = "white";
-    }
-    else if(currentJokeType == "Spooky"){
-        document.body.style.backgroundColor = "indigo";
-        title.style.color = "orange";
-        caution.style.backgroundColor = "#301934"
-        caution.style.color = "orange";
-        caution.style.border = "5px solid orange";
-        options.style.color = "orange";
-        options.style.backgroundColor = "#301934";
-        options.style.border = "5px solid orange";
-        jokebutton.style.color = "orange";
-        jokebutton.style.backgroundColor = "#301934";
-        jokebutton.style.border = "5px solid orange";
-        setup.style.backgroundColor = "#301934";
-        punchline.style.backgroundColor = "#301934";
-        setup.style.border = "5px solid orange";
-        punchline.style.border = "5px solid orange";
-        setup.style.color = "orange";
-        punchline.style.color = "orange";
-    }
-    else if(currentJokeType == "Miscellaneous"){
-        document.body.style.backgroundColor = "pink";
-        title.style.color = "#66023c";
-        caution.style.backgroundColor = "#ec3b83"
-        caution.style.color = "white";
-        caution.style.border = "5px solid black";
-        options.style.color = "white";
-        options.style.backgroundColor = "orange";
-        options.style.border = "5px solid black";
-        jokebutton.style.color = "white";
-        jokebutton.style.backgroundColor = "orange";
-        jokebutton.style.border = "5px solid black";
-        setup.style.backgroundColor = "red";
-        punchline.style.backgroundColor = "darkgreen";
-        setup.style.border = "5px solid black";
-        punchline.style.border = "5px solid black";
-        setup.style.color = "white";
-        punchline.style.color = "white";
-    }
-    else{
-        document.body.style.backgroundColor = "black";
-        title.style.color = "lightgreen";
-        caution.style.backgroundColor = "#1B1212"
-        caution.style.color = "lightgreen";
-        caution.style.border = "2px solid lightgreen";
-        options.style.color = "lightgreen";
-        options.style.backgroundColor = "#1B1212";
-        options.style.border = "5px solid lightgreen";
-        jokebutton.style.color = "lightgreen";
-        jokebutton.style.backgroundColor = "#1B1212";
-        jokebutton.style.border = "5px solid lightgreen";
-        setup.style.backgroundColor = "#1B1212";
-        punchline.style.backgroundColor = "#1B1212";
-        setup.style.border = "5px solid lightgreen";
-        punchline.style.border = "5px solid lightgreen";
-        setup.style.color = "lightgreen";
-        punchline.style.color = "lightgreen";
-    }
+    //text color for all elements
+    caution.style.color = theme.cautionTextColor;
+    options.style.color = theme.optionsTextColor;
+    jokebutton.style.color = theme.buttonTextColor;
+    setup.style.color = theme.setupTextColor;
+    punchline.style.color = theme.punchlineTextColor;
+
+    //Background color for all the elements
+    caution.style.backgroundColor = theme.cautionBackgroundColor;
+    options.style.backgroundColor = theme.optionsBackgroundColor;
+    jokebutton.style.backgroundColor = theme.buttonBackgroundColor;
+    setup.style.backgroundColor = theme.setupBackgroundColor;
+    punchline.style.backgroundColor = theme.punchlineBackgroundColor;
+
+    //Border color for all the elements
+    caution.style.border = `5px solid ${theme.cautionBorderColor}`;
+    options.style.border = `5px solid ${theme.optionsBorderColor}`;
+    jokebutton.style.border = `5px solid ${theme.buttonBorderColor}`;
+    setup.style.border = `5px solid ${theme.setupBorderColor}`;
+    punchline.style.border = `5px solid ${theme.punchlineBorderColor}`;
+    
 }
