@@ -8,7 +8,7 @@ async function getJokes() {
     response = await fetch(`https://v2.jokeapi.dev/joke/${currentJokeType}?type=twopart`);
 
     data = await response.json();
-    console.log(data);
+    // console.log(data);
     document.querySelector(".setup").innerHTML = data.setup;
     document.querySelector(".punchline").innerHTML = data.delivery;
 }
