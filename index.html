@@ -11,11 +11,11 @@
     <script src="index.js" defer></script>
 </head>
 <body>
-        <h1>Joke Generator</h1>
+        <h1 id="title">Joke Generator</h1>
         <p id="caution">
-            <span>Caution:</span> Please be aware that the joke categories include various genres, such as Dark Humor and Puns, which may 
-            involve content that could be sensitive or offensive to some individuals. These categories are intended for <span> humor 
-            and entertainment purposes only.</span> If you are faint-hearted, easily offended, or prefer light-hearted humor, we strongly
+            <b>Caution:</b> Please be aware that the joke categories include various genres, such as Dark Humor and Puns, which may 
+            involve content that could be sensitive or offensive to some individuals. These categories are intended for humor 
+            and entertainment purposes only. If you are faint-hearted, easily offended, or prefer light-hearted humor, we strongly
             recommend avoiding these specific joke categories. Content within these categories may include jokes that touch on 
             sensitive topics. Our goal is to provide a diverse range of humor catering to different tastes, but your comfort is 
             our priority. Thank you for your understanding and consideration.
@@ -29,11 +29,11 @@
                 <option value="Dark">Dark</option>
                 <option value="Miscellaneous">Random</option>
             </select>
-            <button onclick=getJokes()>Next Joke</button>
+            <button onclick=getJokes() id="jokebutton">Next Joke</button>
         </div>
         <div class="textContainer">
-            <div class="setup"></div>
-            <div class="punchline"></div>
+            <div id="setup"></div>
+            <div id="punchline"></div>
         </div>
 </body>
 </html>

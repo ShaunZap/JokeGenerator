@@ -3,11 +3,8 @@
     padding: 0;
     margin: 0;
 }
-body{
-    background-color: lightgreen;
-}
 
-h1{
+#title{
     font-family: 'Raleway', sans-serif;
     font-size: 60px;
     text-align: center;
@@ -21,13 +18,7 @@ h1{
     width: 58%;
     margin: 0 auto;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.808);
-    color: lightcoral;
     border-radius: 5px;
-}
-span{
-    color: red;
-    font-weight: 700;
 }
 .container{
     width: 60%;
@@ -38,9 +29,6 @@ span{
     justify-content: space-between;
 }
 #selectType{
-    color: lightgreen;
-    background-color: rgb(45, 45, 45);
-    border: 5px solid rgb(0, 0, 0);
     font-size: 20px;
     padding: 4px 5px 3px 5px;
     font-weight: 900;
@@ -50,26 +38,13 @@ span{
 option{
     font-weight: 900;
 }
-button{
+#jokebutton{
     font-size: 20px;
-    color: black;
-    background-color: lightgreen;
     padding: 1px 10px 1px 10px;
     border-radius: 2px;
-    border: 5px solid black;
     font-weight: 900;
-    animation-name: bordercolor;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-
 }
-@keyframes bordercolor{
-    0% {border: 5px solid black; color:black;background-color: lightgreen;}
-    50% { color:lightgreen; background-color: black;}
-    100% {border: 5px solid black; color:black;background-color: lightgreen;}
-
-}
-button:hover{
+#jokebutton:hover{
     cursor: pointer;
 }
 .textContainer{
@@ -79,27 +54,24 @@ button:hover{
     margin: 0 auto;
     padding: 10px 10px 0px 10px;
     font-size: 20px;
-    color: lightgreen;
 }
-.setup{
+#setup{
     padding: 20px;
     width: 100%;
     margin: 0 auto;
-    background-color: rgba(30, 30, 30, 0.906);
     border-radius: 5px;
 }
-.punchline{
+#punchline{
     padding: 20px;
     width: 100%;
     margin: 0 auto;
     margin-top: 10px;
     border-radius: 5px;
-    background-color: rgb(30, 30, 30);
 }
 
 
 @media screen and (max-width: 750px) {
-    h1{
+    #title{
         font-size: 40px;
     }
     #caution{
