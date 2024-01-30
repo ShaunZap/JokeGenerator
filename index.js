@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     getJokes();
 });
 
-
-
 async function getJokes() {
     const currentJokeType = document.getElementById("selectType").value;
     let response, data;
@@ -13,7 +11,6 @@ async function getJokes() {
     document.getElementById("setup").innerHTML = data.setup;
     document.getElementById("punchline").innerHTML = data.delivery;
     
-
     const colorThemes = {
         "Dark": { backgroundColor:"#36454F", titleTextColor:"white", cautionBackgroundColor:"white",
                 cautionTextColor:"#36454F", cautionBorderColor:"black", optionsBackgroundColor:"white",
@@ -92,6 +89,5 @@ function applyTheme(theme){
     options.style.border = `5px solid ${theme.optionsBorderColor}`;
     jokebutton.style.border = `5px solid ${theme.buttonBorderColor}`;
     setup.style.border = `5px solid ${theme.setupBorderColor}`;
-    punchline.style.border = `5px solid ${theme.punchlineBorderColor}`;
-    
+    punchline.style.border = `5px solid ${theme.punchlineBorderColor}`;  
 }
